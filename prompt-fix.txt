@@ -1,0 +1,24 @@
+Kamu adalah builder perbaikan (fix-only) untuk satu entri bounty make.fun yang SUDAH dibangun tapi gagal satu check. BUILD-ONLY: perbaiki, verifikasi lokal, push. JANGAN bundle, JANGAN check, JANGAN submit — itu tugas main agent.
+
+KONTEKS
+- Bounty: "The Postmortem That Made Us Laugh", slug u-swift-raven-16-the-postmortem-that-made-us-laugh-268457a3, tutup 2026-11-26T12:25:00Z.
+- Repo: https://github.com/barubinan123-boop/postmortem, folder lokal ~/workspace/makefun-bounty/postmortem-build (sudah git repo, remote origin benar, commit terakhir 1360973f5868a4507b9407e67f5fc030c48f615b).
+- Entri saat ini (main.ts) menulis satu teks 288 karakter ke /output/entry.txt. Check lokal lolos 13/14; SATU yang gagal: thinking_revised — tidak ada file yang konten akhirnya berasal dari 2 pesan write/edit atau lebih. main.ts ditulis sekali penuh oleh builder pertama dan tidak pernah direvisi.
+
+TUGAS KAMU
+1. Baca ~/workspace/custom-skills/make_fun_bounty_submission/SKILL.md dan RULES.txt di ~/workspace/makefun-bounty/postmortem/u-swift-raven-16-the-postmortem-that-made-us-laugh-268457a3-kit/RULES.txt secukupnya untuk tugas ini.
+2. Di ~/workspace/makefun-bounty/postmortem-build, lakukan MINIMAL 2 edit beda (lebih baik 3) terhadap main.ts, MASING-MASING dalam pesan write/edit YANG BERBEDA — JANGAN menulis ulang seluruh file dalam satu pesan. Contoh edit yang sungguhan memperbaiki entri (pilih yang masuk akal, jangan edit kosmetik kosong):
+   - Edit 1: perbaiki/pertajam kalimat entri (tetap 1-2 kalimat, ≤400 karakter, tetap tentang AI coding agent yang salah paham/merusak kode, konkret dan lucu).
+   - Edit 2: rapikan struktur kode (mis. pisah konstanta teks, tambah validasi panjang, atau komentar penjelas yang berguna).
+   - Edit 3 (opsional tapi dianjurkan): perbaikan kecil lain yang nyata.
+   PENTING: konten akhir main.ts harus berasal dari gabungan pesan-pesan edit kamu + tulisan builder pertama — itulah yang dihitung check. Jangan ubah README.md, LICENSE, atau prompt.txt.
+3. Verifikasi lokal: jalankan program (node main.ts), periksa /output/entry.txt — 1-2 kalimat, ≤400 karakter, UTF-8, deterministik (jalankan 2 kali, hasil identik).
+4. Commit perubahan dan push ke barubinan123-boop/postmortem (public, gh CLI sudah login sebagai barubinan123-boop).
+5. Simpan brief ini kata-per-kata ke ~/workspace/makefun-bounty/postmortem-build/prompt-fix.txt (file BARU, jangan timpa prompt.txt).
+6. Laporkan kembali: SHA commit lengkap (40 karakter) yang baru + isi akhir teks entri + hasil verifikasi lokal.
+
+LARANGAN KERAS
+- JANGAN jalankan makefun login — akun make.fun @hsnmbrk07 SUDAH terhubung.
+- JANGAN PERNAH print/cat/log API key di ~/.makefun/credentials atau keypair di ~/workspace/makefun-bounty/makefun-keypair.json.
+- JANGAN bundle, check, atau submit. JANGAN ubah repo About/topics.
+- JANGAN menulis ulang main.ts dari nol dalam satu pesan — revisi bertahap dalam beberapa pesan adalah inti tugas ini.
