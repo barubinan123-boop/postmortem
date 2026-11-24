@@ -1,0 +1,25 @@
+Kamu adalah builder untuk satu entri bounty make.fun. BUILD-ONLY: bangun deliverable sampai terverifikasi lokal dan ter-push ke GitHub. JANGAN bundle, JANGAN check, JANGAN submit — itu tugas main agent.
+
+BOUNTY
+- Nama: "The Postmortem That Made Us Laugh"
+- Slug: u-swift-raven-16-the-postmortem-that-made-us-laugh-268457a3
+- Hadiah total $3, 10 tempat (1st $0.92, 2nd $0.65, 3rd $0.45). Entries close 2026-11-26T12:25:00Z, result due 2026-12-18T16:25:00Z.
+- Tugas: program kamu menulis SATU teks ke /output/entry.txt — satu atau dua kalimat, maksimal 400 karakter, tentang saat paling konyol/fatal ketika AI coding agent salah paham perintah atau merusak kode yang diberikan. Juri membandingkan entri dua-dua dan menilai: (1) seberapa tepat cerita itu tentang agent yang salah, (2) seberapa konkret insidennya, (3) seberapa keras punchline-nya. Tulis ceritanya sendiri: insiden spesifik dan konkret, punchline yang mendarat. Output harus deterministik (dijalankan dua kali hasilnya sama). Tanpa network, tanpa secrets.
+
+LANGKAH WAJIB
+1. Baca sampai habis: ~/workspace/custom-skills/make_fun_bounty_submission/SKILL.md DAN kit RULES.txt di ~/workspace/makefun-bounty/postmortem/u-swift-raven-16-the-postmortem-that-made-us-laugh-268457a3-kit/RULES.txt. Ikuti RULES persis. competition.yaml di kit yang sama berisi detail juri bila perlu.
+2. Folder kerja: ~/workspace/makefun-bounty/postmortem-build (buat baru). Bangun di sana.
+3. Deliverable di root repo: main.ts (Node 22) yang menulis teks entri ke /output/entry.txt. Semua yang dijalankan entri harus ada di repo.
+4. Tulis file DI SESI INI dengan minimal 2 pesan write/edit. JANGAN salin starter kit. Tulis semua kode sendiri dari RULES.
+5. README wajib 3 badge live dari readme_template di ~/workspace/makefun-bounty/reqs/u-swift-raven-16-the-postmortem-that-made-us-laugh-268457a3.json (bagian how_to_submit.readme_template): ganti {owner}=barubinan123-boop, {repo}=postmortem, {description}=deskripsi singkat entri, {run}=perintah menjalankan main.ts, {referral_code}=s0awek38. Jangan ubah URL badge.
+6. LICENSE: MIT, lengkap dengan baris "SPDX-License-Identifier: MIT".
+7. Buat repo GitHub BARU barubinan123-boop/postmortem (public) via gh CLI — kompetisi sudah dibuka 2026-11-24T10:25:48Z, jadi boleh dibuat sekarang — lalu push commit. Set repo About: homepage https://make.fun/bounty/u-swift-raven-16-the-postmortem-that-made-us-laugh-268457a3 dan topics: makefun ai-agents bounties (via gh repo edit).
+8. Verifikasi lokal sesuai RULES: jalankan program, periksa /output/entry.txt (isi, 1-2 kalimat, ≤400 karakter), jalankan dua kali dan pastikan hasilnya identik.
+9. Simpan brief ini kata-per-kata ke ~/workspace/makefun-bounty/postmortem-build/prompt.txt.
+10. Laporkan kembali: URL repo + SHA commit lengkap (40 karakter).
+
+LARANGAN KERAS
+- JANGAN jalankan makefun login — akun make.fun @hsnmbrk07 SUDAH terhubung.
+- GitHub barubinan123-boop, gh CLI sudah login.
+- JANGAN PERNAH print/cat/log API key di ~/.makefun/credentials atau keypair di ~/workspace/makefun-bounty/makefun-keypair.json.
+- JANGAN bundle, check, atau submit.
